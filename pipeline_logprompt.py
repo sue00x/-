@@ -86,13 +86,9 @@ except Exception:
     _HAS_TIKTOKEN = False
 
 def _token_len(s: str, model: str) -> int:
-    if not _HAS_TIKTOKEN:
-        return max(1, len(s)//3)  # 粗略估算兜底
-    try:
-        enc = tiktoken.encoding_for_model(model)
-    except Exception:
-        enc = tiktoken.get_encoding("cl100k_base")
-    return len(enc.encode(s))
+    # 对非 OpenAI 模型（如 Qwen），直接用字符/3 估算 token
+    return max(1, len(s) // 3)
+
 
 def _split_single_long_log(log_text: str, max_lines=200, stride=180):
     """对单条（可能很长的）日志做按行切块，带重叠窗口，避免割裂关键锚点。"""
