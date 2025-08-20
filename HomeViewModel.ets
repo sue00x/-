@@ -257,7 +257,7 @@ export class HomeStore {
     }
     return [];
   }
-  // ✅ 新增：检测超量完成的方法
+  // 检测超量完成的方法
   // private checkOvertimeCompletion(taskItem: TaskInfo): number {
   private checkOvertimeCompletion(taskItem: TaskInfo): number []{
 
@@ -273,7 +273,7 @@ export class HomeStore {
 
     // 只检测数值类型的任务
     if (isNaN(fin) || isNaN(target) || target <= 0) {
-      console.log('❌ 非数值任务或目标值无效，不检测超量');
+      console.log('非数值任务或目标值无效，不检测超量');
       // return 0;
       return [];
     }
@@ -315,7 +315,7 @@ export class HomeStore {
     }
     // 检测超量完成
     // let overtimeAchievement: number = 0;
-    let overtimeAchievements: number[] = [];  // 改为数组
+    let overtimeAchievements: number[] = []; 
     let maxOvertimeLevel = 0;
     if (taskItem.isDone) {
       console.log('=== 检测超量完成 ===');
@@ -460,4 +460,5 @@ export class HomeStore {
     });
   }
 }
+
 
