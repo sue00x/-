@@ -217,21 +217,6 @@
 
 * 所以 <b>Fed-GAN 并不是在修复 Non-IID 带来的偏差，而是在“覆盖/绕过” Non-IID</b>。<br> 换句话说，它不是在“理解 Non-IID 并对齐它”，而是在“忽略 Non-IID 差异，用统一分布代替”。
 
-#### 🔑 总结类比
-
-* <b>FlGan</b>：医生 → 发现数据分布有偏差，给你做 <b>矫正</b>。
-
-* <b>CGL-GAN</b>：调解人 → 保留每个人的个性，但帮你们找到 <b>共同收敛</b> 的方式。
-
-* <b>Fed-GAN</b>：大锅饭 → 不管你原来吃什么，先给大家端一碗 <b>统一的饭 (IID 数据)</b>，这样就能凑合训练了。
-
-<p style="font-family: SimSun; font-size: 16px;">✅ 所以说：</p>
-
-* <b>Fed-GAN 的确能缓解 Non-IID 的影响</b>，但它的方式是 <b>绕开 (bypass)</b> 而不是 <b>真正解决 (correct)</b>。
-
-* 在学术语境下，通常把 Fed-GAN 定位为 <b>解决数据稀缺 &amp; 隐私问题</b>，而 <b>FlGan/CGL-GAN 才是直接针对 Non-IID 设计</b>。
-
-<p style="font-family: SimSun; font-size: 16px;"><br /></p>
 
 ### 六、隐私性对比
 
